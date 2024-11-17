@@ -1,0 +1,56 @@
+﻿@model CollegeManagement.Models.StudentSignUpModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Sign-Up</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Student Sign-Up</h2>
+        <form asp-action="StudentSignUp" method="post">
+            <div class="mb-3">
+                <label for="Name" class="form-label">Name</label>
+                <input type="text" id="Name" name="Name" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="Email" class="form-label">E-mail</label>
+                <input type="email" id="Email" name="Email" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="MobileNo" class="form-label">Mobile No.</label>
+                <input type="text" id="MobileNo" name="MobileNo" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Gender</label><br />
+                <input type="radio" id="Male" name="Gender" value="Male" required />
+                <label for="Male">Male</label>
+                <input type="radio" id="Female" name="Gender" value="Female" required />
+                <label for="Female">Female</label>
+            </div>
+            <div class="mb-3">
+                <label for="Address1" class="form-label">Address-1</label>
+                <input type="text" id="Address1" name="Address1" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="Address2" class="form-label">Address-2</label>
+                <input type="text" id="Address2" name="Address2" class="form-control" />
+            </div>
+            <div class="mb-3">
+                <label for="City" class="form-label">City</label>
+                <input type="text" id="City" name="City" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="State" class="form-label">State</label>
+                <input type="text" id="State" name="State" class="form-control" required />
+            </div>
+            <div class="mb-3">
+                <label for="Password" class="form-label">Password</label>
+                <input type="password" id="Password" name="Password" class="form-control" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+</body>
+</html>

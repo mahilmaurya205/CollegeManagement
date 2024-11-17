@@ -1,0 +1,12 @@
+﻿@model CollegeManagement.Models.SubjectModel
+
+<h2>Add New Subject</h2>
+
+@using (Html.BeginForm())
+{
+    <div class="form-group">
+        @Html.LabelFor(model => model.SubjectName)
+        @Html.TextBoxFor(model => model.SubjectName, new { @class = "form-control" })
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+}

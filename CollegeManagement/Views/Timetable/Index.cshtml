@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CollegeManagement.Models.TimetableModel>
+<html>
+<head>
+    <title>Timetable</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Timetable</h2>
+    <p>
+        @Html.ActionLink("Add New Timetable Entry", "Create")
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>Subject ID</th>
+            <th>Day</th>
+            <th>Time Slot</th>
+            <th>Room</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var entry in Model)
+        {
+            <tr>
+                <td>@entry.SubjectID</td>
+                <td>@entry.Day</td>
+                <td>@entry.TimeSlot</td>
+                <td>@entry.Room</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = entry.ClassID })" class="btn btn-link">
+                        <i class="fas fa-edit"></i>
+                    </a> |
+                    <a href="@Url.Action("Delete", new { id = entry.ClassID })" class="btn btn-link">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<CollegeManagement.Models.StudentModel>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>Students</h2>
+    <p>
+        @Html.ActionLink("Add New Student", "Create")
+    </p>
+
+    <table class="table">
+        <tr>
+            <th>Name</th>
+            <th>Roll Number</th>
+            <th>Action</th>
+        </tr>
+
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.Name</td>
+                <td>@student.RollNumber</td>
+                <td>
+                    <a href="@Url.Action("Edit", new { id = student.ID })" class="btn btn-link">
+                        <i class="fas fa-edit"></i>
+                    </a> |
+                    <a href="@Url.Action("Delete", new { id = student.ID })" class="btn btn-link">
+                        <i class="fas fa-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </table>
+</body>
+</html>
